@@ -1,0 +1,14 @@
+/* App.css */
+
+.main {
+  padding: 20px;
+}
+
+.section {
+  display: none; /* Hide all sections by default */
+}
+
+/* Style to display only the active section */
+.section.active {
+  display: block;
+}

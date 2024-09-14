@@ -1,0 +1,16 @@
+/* src/components/Contact/Contact.css */
+.contact {
+    background-color: #f1f1f1;
+    padding: 60px 20px;
+  }
+  
+  .contact h2 {
+    font-size: 2rem;
+  }
+  
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  

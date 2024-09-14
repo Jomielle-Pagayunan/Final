@@ -1,0 +1,64 @@
+/* src/components/Hero/Hero.css */
+
+/* Import the Great Vibes font */
+@import url('https://fonts.googleapis.com');
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Adjust the height to your preference */
+  color: #fff; /* White text color */
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  background: url('https://fonts.googleapis.com') no-repeat center center; /* Add background image if needed */
+  background-size: cover; /* Ensure the background image covers the section */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: 'Great Vibes', cursive; /* Apply the calligraphy font */
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}

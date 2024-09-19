@@ -1,59 +1,59 @@
 // src/App.js
 import React, { useState } from 'react';
 import Header from './Components/Header/Header';
-import Hero from './Components/Hero/Hero';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
+import Hero from './Components/Hero/Hero';
+import BookingForm from './Components/BookingForm/BookingForm';
 import Contact from './Components/Contact/Contact';
-import SignUp from './Components/Signup/Signup';
-import Login from './Components/Signup/Login'; // Import the Login component
-
-import './App.css';
+import Admin from './Components/Admin/Admin';
 
 const App = () => {
-  // State to track the currently visible section
-  const [visibleSection, setVisibleSection] = useState('home');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
-  const [showLogin, setShowLogin] = useState(false); // State to control login display
+  const [currentPage, setCurrentPage] = useState('home');
+  const [isAdminNavVisible, setIsAdminNavVisible] = useState(false);
 
-  // Function to handle navigation
-  const handleNavigation = (section) => {
-    setVisibleSection(section);
+  const handleAdminClick = () => {
+    setIsAdminNavVisible(true);
+    setCurrentPage('admin');
   };
 
-  // Function to handle signup success
-  const handleSignupSuccess = () => {
-    setShowLogin(true); // Show login after signup
+  const handleHomeClick = () => {
+    setIsAdminNavVisible(false);
+    setCurrentPage('home');
   };
 
-  // Function to handle login success
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true); // Set user as logged in
-    setVisibleSection('home'); // Navigate to the home page after login
+  const renderContent = () => {
+    switch (currentPage) {
+      case 'home':
+        return (
+          <>
+            <Hero setCurrentPage={setCurrentPage} />
+            <Home />
+          </>
+        );
+      case 'about':
+        return <About />;
+      case 'booking':
+        return <BookingForm />;
+      case 'contact':
+        return <Contact />;
+      case 'admin':
+        return <Admin />;
+      default:
+        return <Home />;
+    }
   };
 
   return (
     <div>
-      <Header onNavigate={handleNavigation} />
-      <Hero />
+      <Header 
+        setCurrentPage={setCurrentPage} 
+        isAdminNavVisible={isAdminNavVisible}
+        handleAdminClick={handleAdminClick}
+        handleHomeClick={handleHomeClick}
+      />
       <main>
-        {isLoggedIn ? (
-          // Show home, about, or contact if logged in
-          <>
-            {visibleSection === 'home' && <Home />}
-            {visibleSection === 'about' && <About />}
-            {visibleSection === 'contact' && <Contact />}
-          </>
-        ) : (
-          // Show login or signup based on state
-          <>
-            {showLogin ? (
-              <Login onLogin={handleLoginSuccess} />
-            ) : (
-              <SignUp onSignupSuccess={handleSignupSuccess} />
-            )}
-          </>
-        )}
+        {renderContent()}
       </main>
     </div>
   );

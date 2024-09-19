@@ -1,64 +1,50 @@
-/* src/components/Hero/Hero.css */
-
-/* Import the Great Vibes font */
-@import url('https://fonts.googleapis.com');
+/* src/Components/Hero/Hero.css */
 
 .hero {
+  position: relative;
+  height: 100vh; /* Full screen height */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* Adjust the height to your preference */
-  color: #fff; /* White text color */
-  text-align: center;
-  padding: 0 20px;
-  position: relative;
-  background: url('https://fonts.googleapis.com') no-repeat center center; /* Add background image if needed */
-  background-size: cover; /* Ensure the background image covers the section */
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for better text visibility */
-  z-index: 1;
+  background-image: url('/public/assets/tnf.png'); /* Path to your image */
+  background-size: cover; /* Ensure the background covers the whole area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* No repeating of the background image */
 }
 
 .hero-content {
-  z-index: 2;
-  max-width: 800px;
   text-align: center;
+  color: rgb(0, 0, 0);
+  background-color: #c7c7c700; /* Add semi-transparent background for readability */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.hero h2 {
-  font-family: 'Great Vibes', cursive; /* Apply the calligraphy font */
+h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
-  text-transform: capitalize;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  font-size: 1.2rem;
   margin-bottom: 20px;
+  color: rgb(61, 61, 61);
+
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
+p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: rgb(7, 7, 7);
+
+}
+
+.cta-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
   color: #fff;
+  background-color: #333;
   border: none;
   border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+.cta-btn:hover {
+  background-color: #333333;
 }

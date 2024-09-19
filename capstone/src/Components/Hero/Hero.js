@@ -1,13 +1,14 @@
-// src/components/Hero.js
+// src/Components/Hero/Hero.js
 import React from 'react';
-import './Hero.css';
+import './Hero.css'; // Import the corresponding CSS file
 
-const Hero = () => {
+const Hero = ({ setCurrentPage }) => {
   return (
-    <section className="hero" id="home">
+    <section className="hero">
       <div className="hero-content">
-        <h2>Welcome to TNF Event Center</h2>
-        <p>Come & Experience TNF Event Center's way!</p>
+        <h1>Welcome to Our Event System</h1>
+        <p>Book your next event in seconds. Enjoy a seamless and unforgettable experience!</p>
+        <button className="cta-btn" onClick={() => setCurrentPage('booking')}>Book an Event</button>
       </div>
     </section>
   );

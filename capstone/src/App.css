@@ -1,14 +1,62 @@
-/* App.css */
+/* src/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-.main {
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
   padding: 20px;
+  text-align: center;
 }
 
-.section {
-  display: none; /* Hide all sections by default */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Style to display only the active section */
-.section.active {
-  display: block;
+form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 200px;
+}
+
+form button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
 }

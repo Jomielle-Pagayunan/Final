@@ -6,7 +6,7 @@ import Home from './Components/Home/Home';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import SignUp from './Components/Signup/Signup';
-import Login from './Components/Signup/Login'; 
+import Login from './Components/Signup/Login'; // Import the Login component
 
 import './App.css';
 

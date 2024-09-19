@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/public/assets/tnf.png'); /* Path to your image */
   background-size: cover; /* Ensure the background covers the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* No repeating of the background image */

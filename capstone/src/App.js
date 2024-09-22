@@ -9,16 +9,10 @@ import Admin from './Components/Admin/Admin';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
-  const [isAdminNavVisible, setIsAdminNavVisible] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const handleAdminClick = () => {
-    setIsAdminNavVisible(true);
-    setCurrentPage('admin');
-  };
-
-  const handleHomeClick = () => {
-    setIsAdminNavVisible(false);
-    setCurrentPage('home');
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
   };
 
   const renderContent = () => {
@@ -37,7 +31,7 @@ const App = () => {
       case 'contact':
         return <Contact />;
       case 'admin':
-        return <Admin />;
+        return <Admin isNavOpen={isNavOpen} toggleNav={toggleNav} />;
       default:
         return <Home />;
     }
@@ -47,9 +41,9 @@ const App = () => {
     <div>
       <Header 
         setCurrentPage={setCurrentPage} 
-        isAdminNavVisible={isAdminNavVisible}
-        handleAdminClick={handleAdminClick}
-        handleHomeClick={handleHomeClick}
+        currentPage={currentPage} 
+        toggleNav={toggleNav} 
+        isNavOpen={isNavOpen} 
       />
       <main>
         {renderContent()}

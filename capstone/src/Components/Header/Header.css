@@ -1,36 +1,46 @@
-/* Header.css */
-
+/* src/Components/Header/Header.css */
 .header {
-    background-color: #333333;
-    padding: 20px; 
-  }
-  
+  background-color: #333333; /* Dark background color */
+  padding: 20px; /* Padding for spacing */
+  display: flex; /* Flexbox layout */
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center; /* Vertically center the items */
+}
 
+.nav-list {
+  display: flex; /* Flexbox for the navigation list */
+  list-style-type: none; /* Remove default list styling */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-list li {
+  margin-left: 20px; /* Space between the list items */
+}
+
+.nav-list button {
+  padding: 10px 20px; /* Spacing inside the buttons */
+  font-size: 1rem; /* Button text size */
+  background-color: #333; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default borders */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.nav-list button:hover {
+  background-color: #7e7e7e; /* Darker shade on hover */
+}
+
+/* Optional: Add responsive behavior */
+@media (max-width: 768px) {
   .nav-list {
-    display: flex; 
-    justify-content: flex-end;
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
+    flex-direction: column; /* Stack the items vertically on smaller screens */
+    align-items: flex-end; /* Align items to the right */
   }
-  
   
   .nav-list li {
-    margin-left: 20px; 
+    margin: 10px 0; /* Add vertical spacing between items */
   }
-
-  .nav-list button {
-    padding: 10px 20px; 
-    font-size: 1rem;
-    background-color: #333; 
-    color: white; 
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-list button:hover {
-    background-color: #7e7e7e; 
-  }
-  
+}

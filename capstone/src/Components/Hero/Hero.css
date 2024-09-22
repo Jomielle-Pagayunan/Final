@@ -1,11 +1,13 @@
-/* src/Components/Hero/Hero.css */
-
+HERO.CSS
 .hero {
   position: relative;
-  height: 100vh; /* Full screen height */
+  height: 70vh; /* Full screen height */
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FFD0D0; /* Set a plain background color here */
+  /* Remove or comment out the background image properties */
+  /* background-image: url('/path-to-your-image.jpg'); */
   background-size: cover; /* Ensure the background covers the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* No repeating of the background image */
@@ -23,14 +25,12 @@ h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   color: rgb(61, 61, 61);
-
 }
 
 p {
   font-size: 1.5rem;
   margin-bottom: 30px;
   color: rgb(7, 7, 7);
-
 }
 
 .cta-btn {
